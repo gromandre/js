@@ -1,46 +1,56 @@
-let programNumber;
-let userNumber;
+let userInput;
+let random;
 
-function getRandomInt(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-};
 
 function isNumeric(userNumber) {
     return !isNaN(parseFloat(userNumber)) && isFinite(userNumber);
 };
 
-programNumber = getRandomInt(0,100);
-console.log(programNumber);
+function getRandomIntInclusive(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min; 
+  }
+  
+random = getRandomIntInclusive(0, 1000)
+console.log(random);
 
-userNumber = prompt ('Угадайте число, загаданное программой!');
+function getUserNumber(){
+    userInput = prompt('Угадайте число');
 
-while(true){
-    
-    if(userNumber === null){
-        break;
+    while(true){
+        if(userInput==null){
+            return userInput;
+        }
+        else if (!isNumeric(userInput)){
+            alert('Ошибка, введите число!');
+            getUserNumber();
+        }
+        else{
+            break;
+        }
     }
+}
 
-    while( isNaN(userNumber)||!userNumber.trim() ){
-        alert( 'Нужно ввести число, а не строку' );
-        userNumber = prompt('Введите число');
-        console.log(userNumber);
+function compareNumbers(){
+    if(userInput==null){
+        return gameStatus = false;
+    } 
+    if(userInput>random){
+        alert("Меньше, попробуйте еще раз");
     }
+    if(userInput<random){
+        alert("Больше, попробуйте еще раз");
+    }
+    if(userInput==random){
+        alert("Поздравляю, Вы угадали");
+        return gameStatus = false;
+    }
+}
+let gameStatus = true;
+   while(gameStatus == true){
+    getUserNumber();
+    compareNumbers();
+   }
     
-    if(userNumber>programNumber){
-        alert ('Вы не угадали, попробуйте ввести число меньше!');
-        userNumber = prompt('Введите число');
-    };
-    if(userNumber<programNumber){
-        alert ('Вы не угадали, попробуйте ввести число больше!');
-        userNumber = prompt('Введите число');
-    };  
-    if(userNumber==programNumber){
-        alert ('Правильно!');
-        break;
-    };
-};
-
-
 
 
 
