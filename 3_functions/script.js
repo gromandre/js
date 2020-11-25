@@ -7,34 +7,33 @@ function getRandomIntInclusive(min, max) {
 };
 
 function getUserNumber(){
-    
-    let userInput = prompt('Угадайте число');
+    let userInput;
     
     while(true){
+        userInput = prompt('Угадайте число');
         if(userInput===null){
             break;
         }
         
         else if (!isNumeric(userInput)){
             alert('Ошибка, введите число!');
-            getUserNumber();
+            
         }
         else{
             userInput = parseInt(userInput);
-            break;
+            break; 
         }
-    }  
-    return userInput;
+    } 
+    return userInput; 
 }
 
-function startGame(){
-    let numberFrom = 0;
-    let numberTo = 2;
-    let randomNumber = getRandomIntInclusive(numberFrom, numberTo);
+function startGame(min, max){
+
+    let randomNumber = getRandomIntInclusive(min, max);
+    console.log(randomNumber);
     
     while(true){
         let input = getUserNumber();
-        console.log(isNaN(input));
         if(input===null){
             break;
         }
@@ -50,4 +49,4 @@ function startGame(){
         } 
     }
 }
-startGame();
+startGame(0, 1000);
