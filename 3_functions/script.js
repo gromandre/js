@@ -1,5 +1,7 @@
-startGame(0, 1000);
+const minNumber = 0;
+const maxNumber = 1000;
 
+startGame(minNumber, maxNumber);
 
 function isNumeric(userNumber) {
     return !isNaN(parseFloat(userNumber)) && isFinite(userNumber);
