@@ -1,3 +1,6 @@
+startGame(0, 1000);
+
+
 function isNumeric(userNumber) {
     return !isNaN(parseFloat(userNumber)) && isFinite(userNumber);
 };
@@ -10,7 +13,7 @@ function getUserNumber(){
     let userInput;
     
     while(true){
-        userInput = prompt('Угадайте число');
+        userInput = prompt('Введите число');
         if(userInput===null){
             break;
         }
@@ -30,7 +33,6 @@ function getUserNumber(){
 function startGame(min, max){
 
     let randomNumber = getRandomIntInclusive(min, max);
-    console.log(randomNumber);
     
     while(true){
         let input = getUserNumber();
@@ -49,4 +51,3 @@ function startGame(min, max){
         } 
     }
 }
-startGame(0, 1000);
