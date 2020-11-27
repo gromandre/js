@@ -1,7 +1,7 @@
-const minNumber = 0;
-const maxNumber = 1000;
+const MIN_NUMBER = 0;
+const MAX_NUMBER = 1000;
 
-startGame(minNumber, maxNumber);
+startGame(MIN_NUMBER, MAX_NUMBER);
 
 function isNumeric(userNumber) {
     return !isNaN(parseFloat(userNumber)) && isFinite(userNumber);
@@ -12,7 +12,7 @@ function getRandomIntInclusive(min, max) {
 };
 
 function getUserNumber(){
-    let userInput;
+    const userInput;
     
     while(true){
         userInput = prompt('Введите число');
@@ -34,10 +34,10 @@ function getUserNumber(){
 
 function startGame(min, max){
 
-    let randomNumber = getRandomIntInclusive(min, max);
+    const randomNumber = getRandomIntInclusive(min, max);
     
     while(true){
-        let input = getUserNumber();
+        const input = getUserNumber();
         if(input===null){
             break;
         }
