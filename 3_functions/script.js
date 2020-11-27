@@ -12,24 +12,22 @@ function getRandomIntInclusive(min, max) {
 };
 
 function getUserNumber(){
-    const userInput;
+    
+    let userInput;
     
     while(true){
-        userInput = prompt('Введите число');
-        if(userInput===null){
-            break;
-        }
-        
-        else if (!isNumeric(userInput)){
-            alert('Ошибка, введите число!');
+            userInput = prompt('Введите число');
+            if(userInput===null){
+                return null;
+            }
             
-        }
-        else{
-            userInput = parseInt(userInput);
-            break; 
-        }
-    } 
-    return userInput; 
+            if (!isNumeric(userInput)){
+                alert('Ошибка, введите число!');
+                continue;
+                
+            }
+            return +userInput; 
+    }
 }
 
 function startGame(min, max){
