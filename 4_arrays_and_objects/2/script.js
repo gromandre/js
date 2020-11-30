@@ -1,53 +1,31 @@
-const MIN_NUMBER = 0;
-const MAX_NUMBER = 1000;
-
-startGame(MIN_NUMBER, MAX_NUMBER);
-
-function isNumeric(userNumber) {
-    return !isNaN(parseFloat(userNumber)) && isFinite(userNumber);
-};
-
-function getRandomIntInclusive(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min; 
-};
-
-function getUserNumber(){
+const users = [
     
-    let userInput;
+    {
+        name:'Иван',
+        login:'ivan',
+        password:'1234'
+    },
     
-    while(true){
-            userInput = prompt('Введите число');
-            if(userInput===null){
-                return null;
-            }
-            
-            if (!isNumeric(userInput)){
-                alert('Ошибка, введите число!');
-                continue;
-                
-            }
-            return +userInput; 
+    {
+        name:'Петр',
+        login:'petr',
+        password:'7777'
     }
-}
+];
 
-function startGame(min, max){
-
-    const randomNumber = getRandomIntInclusive(min, max);
+const inputLogin = prompt("Введите логин");
+const inputPassword = prompt("Введите пароль");
+let userName;
+   
+for(let i=0;users.length;i++){
     
-    while(true){
-        const input = getUserNumber();
-        if(input===null){
-            break;
-        }
-        if(input>randomNumber){
-            alert('Число меньше, попробуйте еще раз');      
-        }
-        if(input<randomNumber){
-            alert('Число больше, попробуйте еще раз');  
-        }
-        if(input==randomNumber){
-            alert('Вы угадали!'); 
-            break;
-        } 
+    if((inputLogin===users[i].login) && (inputPassword===users[i].password)){
+        userName = users[i].name;
+        alert('Добрый день, '+userName+'!');
+        break;
     }
-}
+    if(i===users.length-1){
+        alert('Ошибка авторизации');
+        break;
+    }
+};
