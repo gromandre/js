@@ -5,7 +5,6 @@ const users = [
         login:'ivan',
         password:'1234'
     },
-    
     {
         name:'Петр',
         login:'petr',
@@ -18,7 +17,6 @@ const inputPassword = prompt("Введите пароль");
 let userName;
    
 for(let i=0;users.length;i++){
-    
     if((inputLogin===users[i].login) && (inputPassword===users[i].password)){
         userName = users[i].name;
         alert('Добрый день, '+userName+'!');
