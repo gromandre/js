@@ -1,5 +1,7 @@
+const inputLogin = prompt('Введите логин');
+const inputPassword = prompt('Введите пароль');
+
 const users = [
-    
     {
         name:'Иван',
         login:'ivan',
@@ -12,18 +14,21 @@ const users = [
     }
 ];
 
-const inputLogin = prompt("Введите логин");
-const inputPassword = prompt("Введите пароль");
-let userName;
-   
-for(let i=0;users.length;i++){
-    if((inputLogin===users[i].login) && (inputPassword===users[i].password)){
-        userName = users[i].name;
-        alert('Добрый день, '+userName+'!');
-        break;
-    }
-    if(i===users.length-1){
-        alert('Ошибка авторизации');
-        break;
-    }
-};
+authorization(inputLogin, inputPassword, users);
+
+function authorization(login, password, array){
+    let userName;
+    
+    for(let i=0;users.length;i++){
+        if(login===null || password===null){
+            break;
+        }
+        if((login===array[i].login) && (password===array[i].password)){
+            userName = array[i].name;
+            return alert('Добрый день, '+userName+'!');  
+        }
+        if(i===array.length-1){
+            return alert('Ошибка авторизации');
+        }
+    };
+}
