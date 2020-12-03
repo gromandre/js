@@ -16,16 +16,12 @@ const users = [
 
 authorization(inputLogin, inputPassword, users);
 
-function authorization(login, password, array){
-    let userName;
-    
-    for(let i=0;users.length;i++){
+function authorization(login, password, array){ 
+    for(let i=0;i<users.length;i++){
         if((login===array[i].login) && (password===array[i].password)){
-            userName = array[i].name;
+            const userName = array[i].name;
             return alert('Добрый день, '+userName+'!');  
         }
-        if(i===array.length-1){
-            return alert('Ошибка авторизации');
-        }
     };
+    return alert('Ошибка авторизации!');
 }
