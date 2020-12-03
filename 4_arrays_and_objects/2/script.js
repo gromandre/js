@@ -20,9 +20,6 @@ function authorization(login, password, array){
     let userName;
     
     for(let i=0;users.length;i++){
-        if(login===null || password===null){
-            break;
-        }
         if((login===array[i].login) && (password===array[i].password)){
             userName = array[i].name;
             return alert('Добрый день, '+userName+'!');  
