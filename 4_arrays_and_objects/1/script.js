@@ -9,24 +9,37 @@ function declOfNum(number, titles) {
 
 function nowDate(){
     const day = new Date(),
-     
-    date = day.toLocaleString('ru-Ru', {day: 'numeric', month: 'long'}),
-    weekdays = day.toLocaleString('ru-Ru', { weekday: 'long' }),
-    years = day.toLocaleString('ru-Ru', {year: 'numeric'}),
-	hours = day.toLocaleString('ru-Ru', {hour: '2-digit'}),
-	minutes = day.toLocaleString('ru-Ru', {minute: '2-digit'}),
-	seconds = day.toLocaleString('ru-Ru', {second: '2-digit'}),
+    
+    locales = 'ru-Ru',
 
-    DECLINATION_HOURS = declOfNum(hours,['час', 'часа', 'часов']) ,
-    DECLINATION_MINUTES = declOfNum(minutes,['минута', 'минуты', 'минут']) ,
-    DECLINATION_SECONDS = declOfNum(seconds,['секунда', 'секунды', 'секунд']);
+    performanceDay =  {day: 'numeric', month: 'long'},
+    performanceWeekday =  {weekday: 'long'},
+    performanceYear =  {year: 'numeric'},
+    performanceHour =  {hour: '2-digit'},
+    performanceMinute =  {minute: '2-digit'},
+    performanceSecond =  {second: '2-digit'},
+    
+    date = day.toLocaleString(locales, performanceDay),
+    weekdays = day.toLocaleString(locales, performanceWeekday),
+    years = day.toLocaleString(locales, performanceYear),
+	hours = day.toLocaleString(locales, performanceHour),
+	minutes = day.toLocaleString(locales, performanceMinute),
+    seconds = day.toLocaleString(locales, performanceSecond),
+    
+    wordformHours = ['час', 'часа', 'часов'],
+    wordformMinute = ['минута', 'минуты', 'минут'],
+    wordformSeconds = ['секунда', 'секунды', 'секунд'],
+
+    declinationHours = declOfNum(hours, wordformHours) ,
+    declinationMinutes = declOfNum(minutes, wordformMinute) ,
+    declinationSeconds = declOfNum(seconds, wordformSeconds);
    
     console.log('Сегодня ' 
         +date+' '+years+' года, '
         +weekdays+', '
-        +hours+' '+DECLINATION_HOURS+' '
-        +minutes+' '+DECLINATION_MINUTES+' '
-        +seconds+' '+DECLINATION_SECONDS
+        +hours+' '+declinationHours+' '
+        +minutes+' '+declinationMinutes+' '
+        +seconds+' '+declinationSeconds
     )
 };
 
