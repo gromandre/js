@@ -30,15 +30,15 @@ window.startGame=function (min, max){
 
     const randomNumber = getRandomIntInclusive(min, max);
 
-    const maxAttempts = 10;
+    const MAX_ATTEMPTS = 10;
 
-    for(let attempts=1; attempts<=maxAttempts; attempts++){
+    for(let attempts=1; attempts<=MAX_ATTEMPTS; attempts++){
         const input = getUserNumber();
         if(input===null){
             break;
         }
-        if(attempts===maxAttempts){
-            let repidStart = confirm('Вы превысили максимальное количество попыток! Повторить?'); 
+        if(attempts===MAX_ATTEMPTS){
+            const repidStart = confirm('Вы превысили максимальное количество попыток! Повторить?'); 
             if(repidStart===false){
                 break;
             }
