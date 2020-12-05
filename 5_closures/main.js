@@ -1,5 +1,1 @@
-
-const MIN_NUMBER = 0;
-const MAX_NUMBER = 1000;
-
-startGame(MIN_NUMBER, MAX_NUMBER);
+startGame();
