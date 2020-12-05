@@ -26,7 +26,7 @@ function getUserNumber(){
     }
 }
 
-window.startGame=function (min, max){
+window.startGame = function(min, max){
 
     const randomNumber = getRandomIntInclusive(min, max);
 
