@@ -9,7 +9,7 @@
                     return null;
                 }
                 
-                if (!chekNumber(userInput)){
+                if (!isNumeric(userInput)){
                     alert('Ошибка, введите число!');
                     continue;
                     

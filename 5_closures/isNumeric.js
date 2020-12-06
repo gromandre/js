@@ -3,5 +3,5 @@
         return !isNaN(parseFloat(userNumber)) && isFinite(userNumber);
     };
 
-    window.chekNumber = isNumeric;
+    window.isNumeric = isNumeric;
 })();

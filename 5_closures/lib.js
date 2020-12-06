@@ -13,11 +13,11 @@
                 break;
             }
             if(attempts===MAX_ATTEMPTS){
-                const repidStart = confirm('Вы превысили максимальное количество попыток! Повторить?'); 
-                if(repidStart===false){
+                if(confirm('Вы превысили максимальное количество попыток! Повторить?')){
+                    return startGame(MIN_NUMBER, MAX_NUMBER);
+                }else{
                     break;
                 }
-                return startGame(MIN_NUMBER, MAX_NUMBER);
             }
             if(input>randomNumber){
                 alert('Число меньше, попробуйте еще раз');      
