@@ -5,10 +5,6 @@
         
         this.add =  function(user) {
             this.users.push(user);    
-        },
-       
-        this.getAllUsers = function(){
-            return console.log(this.users);
         }
     };
 

@@ -1,17 +1,18 @@
 'use strict';
 (function(){
     function registrationNewUsers(){
-        const WORD_COUNT = 2;
+        const MAX_NUMBERS_VALUES = 2;
+        const SEPARATOR = ' ';
         const userList = new UserList();
     
         while(true){
             const userInput = prompt('Введите Имя и Фамилию через пробел');
             if(userInput===null){
-                return userList.getAllUsers();
+                return console.log(userList.users);    
             }
-            const userArr = userInput.split(' ');
+            const userArr = userInput.split(SEPARATOR);
     
-            if(userArr.length == WORD_COUNT){
+            if(userArr.length == MAX_NUMBERS_VALUES){
                 const newUser = new User(userArr[0], userArr[1]);
                 userList.add(newUser);
             }else{
