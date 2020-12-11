@@ -8,7 +8,7 @@
         while(true){
             const userInput = prompt('Введите Имя и Фамилию через пробел');
             if(userInput===null){
-                return console.log(userList.users);    
+                return userList.users;    
             }
             const userArr = userInput.split(SEPARATOR);
     
