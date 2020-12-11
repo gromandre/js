@@ -8,9 +8,10 @@
         while(true){
             const userInput = prompt('Введите Имя и Фамилию через пробел');
             if(userInput===null){
-                return userList.users;    
+                userList.getAllUsers();    
+                break;
             }
-            const userArr = userInput.split(SEPARATOR);
+            const userArr = userInput.trim().split(SEPARATOR);
     
             if(userArr.length == MAX_NUMBERS_VALUES){
                 const newUser = new User(userArr[0], userArr[1]);
