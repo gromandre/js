@@ -1,10 +1,9 @@
 'use strict';
 (function(){
     function User(firstName, lastName){
-        const registrationDate = new Date();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.regDate = registrationDate;
+        this.regDate = new Date();
     };
     window.User = User;
 })();
