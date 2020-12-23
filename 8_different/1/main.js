@@ -1,6 +1,7 @@
-'use strict';
+
 function foo (){
     while(true){
+        'use strict';
         let userInput = prompt('2+2*2?');
         
         if(isNaN(userInput)){

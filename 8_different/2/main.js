@@ -1,8 +1,9 @@
-filterByType('string', 10, 20, 'a', 'b', true, false);
-
-function filterByType(){
-    const args = [...arguments];
-    const typeFirstArgs = typeof args[0];
-    const result = args.filter(arg => typeof arg === typeFirstArgs);
-    console.log(result);
+function filterByType(type, ...args) {
+    return args.filter(function(arg) {
+        return typeof(arg) === typeof(type)
+    })
 }
+
+alert(filterByType('string', 10, 20, 'a', 'b', true, false));
+alert(filterByType(1, 'dasd', 2, [], 44));
+alert(filterByType([1, 3, 4], [2], 'adsd', 22));
