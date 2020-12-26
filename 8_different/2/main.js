@@ -1,9 +1,33 @@
+ function conditionCheck(type, arg) {
+    if(typeof(arg) === typeof(type)){
+        if(typeof(type) === 'number' && !isNaN(type) && isNaN(arg)){
+            return false;
+        }
+        if(typeof(type) === 'object' && (type !== null) && (arg === null)){
+            return false;
+        }
+         if(typeof(type) === 'object' && !Array.isArray(type) && Array.isArray(arg)){
+            return false;
+        }
+        if(typeof(type) === 'object' && Array.isArray(type) && !Array.isArray(arg)){
+            return false;
+        }
+        if(typeof(type) === 'number' && isNaN(type) && !isNaN(arg)){
+            return false;
+        }
+        if(typeof(type) === 'object' && (type === null)&&(arg !== null)){
+            return false;
+        }
+
+        return true;
+
+    }else{
+        return false;
+    }
+} 
+
 function filterByType(type, ...args) {
     return args.filter(function(arg) {
-        return typeof(arg) === typeof(type)
+        return conditionCheck(type, arg);
     })
 }
-
-alert(filterByType('string', 10, 20, 'a', 'b', true, false));
-alert(filterByType(1, 'dasd', 2, [], 44));
-alert(filterByType([1, 3, 4], [2], 'adsd', 22));
