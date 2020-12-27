@@ -2,7 +2,7 @@
 function foo (){
     'use strict';
     while(true){
-        let userInput = prompt('2+2*2?');
+        userInput = prompt('2+2*2?');
         
         if(isNaN(userInput)){
             throw('Введено не число!')
