@@ -2,8 +2,6 @@ let input = document.querySelector('input');
 let button = document.querySelector('button');
 let todo = document.querySelector('.inner-box__user-list');
 
-
-
 button.addEventListener('click', function(){
 
     if(!input.value){
