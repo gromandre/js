@@ -1,0 +1,12 @@
+.inner-box{
+    display: flex;
+    justify-content: space-around;
+}
+.inner-box__wrapper, .create-new-list{
+    width: 50%;
+    border: solid 1px black;
+    padding: 20px;
+}
+.checked{
+    text-decoration: line-through;
+}
