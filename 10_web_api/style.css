@@ -1,0 +1,8 @@
+.container{
+    width: 500px;
+}
+.text{
+    border: solid 1px black;
+    padding: 10px;
+    height: 200px;
+}
