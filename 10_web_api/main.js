@@ -12,6 +12,8 @@ buttonEdit.addEventListener('click', function(){
 buttonSave.addEventListener('click', function(){
     text.removeAttribute('contenteditable');
     localStorage.setItem('text', text.innerText);
+    buttonSave.setAttribute('disabled', 'disabled');
+    buttonCanceling.setAttribute('disabled', 'disabled');
 });
 
 text.innerText = localStorage.getItem('text');
