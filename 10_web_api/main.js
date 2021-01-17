@@ -1,7 +1,7 @@
-let text = document.querySelector('.text');
-let buttonEdit = document.querySelector('.edit');
-let buttonSave = document.querySelector('.save');
-let buttonCanceling = document.querySelector('.canceling');
+const text = document.querySelector('.text');
+const buttonEdit = document.querySelector('.edit');
+const buttonSave = document.querySelector('.save');
+const buttonCanceling = document.querySelector('.canceling');
 
 buttonEdit.addEventListener('click', function(){
     text.setAttribute('contenteditable', 'true');
